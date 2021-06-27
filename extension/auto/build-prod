@@ -1,0 +1,7 @@
+#!/bin/bash -eu
+
+echo 'INFO: Building minified prod bundle...'
+rm -rf ./build && \
+  parcel build src/popup/popup.js src/background/background.js src/content/content.js -d build/dist && \
+  cp -r ./static ./build &&
+  cp ./manifest.json ./build

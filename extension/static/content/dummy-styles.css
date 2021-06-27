@@ -1,0 +1,17 @@
+/*
+  dummy-styles.css contains styles to simulate the real Youtube page for developing against.
+  Try to make the styles similar to what gets injected to youtube.
+*/
+
+html {
+  font-size: 12px;
+  font-family: "Roboto, Arial, sans-serif";
+}
+
+* {
+  margin: 0px;
+}
+
+.channel-desc {
+  font-size: 14px;
+}

@@ -1,0 +1,47 @@
+{
+    "manifest_version": 2,
+    "name": "Tube Hunt",
+    "version": "0.1.1",
+    "content_security_policy":"script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.youtube.com/"
+            ],
+            "css": ["dist/content/channel.css"],
+            "js": [
+                "dist/content/content.js"
+            ]
+        }
+    ],
+    "background": {
+        "persistent": false,
+        "scripts": [
+          "dist/background/background.js",
+          "static/hot-reload.js"
+        ]
+    },
+    "oauth2": {
+      "client_id": "221785724000-g8792sv5nd156g57o98l8v6uocq9p594.apps.googleusercontent.com",
+      "scopes": [
+        "https://www.googleapis.com/auth/userinfo.email",
+        "https://www.googleapis.com/auth/userinfo.profile"
+      ]
+    },
+    "key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr0vrNxcH4rJJz3Iq4+EZ\nBJLYq93ohps633xYRc6dRYDka1rdnRs5Yqmlcbd8BEAkbrdOHwAejFF1w4AsctHe\nkwc4bChbY9OUTeuCOoLrUAkBqAuHDXoI0Djy56SKr+PwtNGkOJhQdbonCEwKb13g\nT6Bwy8NJI63eDzd/byYnYt+eOReEBjRKBE55UyJ8ycMJKPlFDuPkdIKcXYxhsEkY\nTIrh9g2VpRi8elLsPKswxatzMs7ODnjmdUxIOTps9yVe01PSM5724bH8IH1XUu5i\n06Ca4aX6mmGoQ1jiu5WeGbXU8dAyiVeCLg7/B2qyrSR4UfjdynqH0k5CF59BtFJ+\nmQIDAQAB\n-----END PUBLIC KEY-----",
+    "icons": {
+        "16": "static/assets/icon128.png",
+        "48": "static/assets/icon128.png",
+        "128": "static/assets/icon128.png"
+    },
+    "browser_action": {
+        "default_icon": "static/assets/icon128.png",
+        "default_popup": "dist/popup/popup.html"
+    },
+    "permissions":[
+        "https://us-central1-tube-hunt.cloudfunctions.net/app/api/*",
+        {"web_accessible_resources": ["channel.css"]},
+        "identity",
+        "tabs"
+    ]
+}

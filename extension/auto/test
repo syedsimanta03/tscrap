@@ -1,0 +1,10 @@
+#!/bin/bash -eu
+
+cd $(dirname $0)/..
+
+# Setup __mocks__ dir
+echo "INFO: Setting up jest __mocks__ directory"
+cp -R ./mocks ./__mocks__
+trap "echo INFO: Cleaning up __mocks__ directory && rm -rf ./__mocks__" 0
+
+npm run test -- --watch

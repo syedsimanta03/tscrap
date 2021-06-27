@@ -1,0 +1,11 @@
+.DS_Store
+node_modules
+build
+.env
+./server/functions/permission.json
+./server/functions/YouTubeAPI.json
+extension/*-bundle.js
+extension/.cache
+extension/dist
+extension/__mocks__
+
